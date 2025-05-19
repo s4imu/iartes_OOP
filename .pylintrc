@@ -1,0 +1,61 @@
+[MASTER]
+# Caminhos a serem ignorados
+ignore=venv,.venv,build,dist,migrations
+
+# Extensões que o pylint deve considerar
+load-plugins=pylint.extensions.docparams
+
+# Número máximo de argumentos por função
+max-args=5
+
+# Número máximo de atributos por classe
+max-attributes=10
+
+# Número máximo de métodos por classe
+max-methods=20
+
+# Permite a avaliação de expressões (por exemplo, em notebooks ou REPL)
+unsafe-load-any-extension=yes
+
+[MESSAGES CONTROL]
+# Desative mensagens específicas (adicione ou remova conforme necessário)
+disable=
+    missing-docstring,
+    invalid-name,
+    too-few-public-methods,
+    too-many-arguments,
+    too-many-instance-attributes,
+    too-many-locals,
+    too-many-branches,
+    too-many-statements,
+    line-too-long,
+    duplicate-code,
+    fixme
+
+[FORMAT]
+# Tamanho máximo da linha
+max-line-length=100
+
+# Identação (espaços por nível)
+indent-string='    '
+indent-after-paren=4
+
+[DESIGN]
+# Complexidade máxima de uma função
+max-complexity=10
+
+[TYPECHECK]
+# Ignora erros de tipo em módulos específicos (ex: se você usar Django, Flask etc.)
+ignored-modules=flask,django
+
+[REPORTS]
+# Desativa o relatório final resumido
+reports=no
+
+[LOGGING]
+# Impede avisos por usar print (se quiser desativar print, remova essa linha)
+disable=logging-not-lazy,logging-format-interpolation
+
+[REFACTORING]
+# Tamanho mínimo de função para sugerir extração
+min-similarity-lines=5
