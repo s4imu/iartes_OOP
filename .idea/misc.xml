@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-    <option name="cmdArguments" value="--line-length 88 --skip-string-normalization --target-version py313" />
     <option name="enabledOnReformat" value="true" />
     <option name="enabledOnSave" value="true" />
-    <option name="sdkName" value="Python 3.13 (iartes_OOP)" />
+    <option name="sdkName" value="Python 3.10 (iartes_OOP)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (iartes_OOP)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (iartes_OOP)" project-jdk-type="Python SDK" />
 </project>
