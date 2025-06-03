@@ -74,13 +74,19 @@ class TestEstoque(unittest.TestCase):
 
     def test_CT005_atualizar_produto(self):
         produto = self.gerar_produto_ficticio()
-        self.client.post("/produtos", data=json.dumps(produto), headers=self.headers)
+        response_criacao = self.client.post(
+            "/produtos", data=json.dumps(produto), headers=self.headers
+        )
+        data_criacao = json.loads(response_criacao.data)
+        produto_id = data_criacao["id"]
         atualizacao = {
             "nome": self.fake.word(),
             "preco_unitario": self.fake.random_int(min=1, max=10000) / 100,
         }
         response = self.client.put(
-            "/produtos/1", data=json.dumps(atualizacao), headers=self.headers
+            f"/produtos/{produto_id}",
+            data=json.dumps(atualizacao),
+            headers=self.headers,
         )
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.data)
@@ -129,8 +135,12 @@ class TestEstoque(unittest.TestCase):
 
     def test_CT008_remover_produto(self):
         produto = self.gerar_produto_ficticio()
-        self.client.post("/produtos", data=json.dumps(produto), headers=self.headers)
-        response = self.client.delete("/produtos/1", headers=self.headers)
+        reponse_criacao = self.client.post(
+            "/produtos", data=json.dumps(produto), headers=self.headers
+        )
+        data = json.loads(reponse_criacao.data)
+        produto_id = data["id"]
+        response = self.client.delete(f"/produtos/{produto_id}", headers=self.headers)
         self.assertEqual(response.status_code, 200)
 
     # Cenários de Erro de Validação

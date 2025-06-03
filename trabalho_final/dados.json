@@ -1,0 +1,406 @@
+{
+    "usuarios": {
+        "admin": "senha123"
+    },
+    "produtos": [
+        {
+            "id": 2,
+            "nome": "error",
+            "categoria": "praesentium",
+            "quantidade_inicial": 86,
+            "preco_unitario": 62.34
+        },
+        {
+            "id": 3,
+            "nome": "tempore",
+            "categoria": "nobis",
+            "quantidade_inicial": 95,
+            "preco_unitario": 54.48
+        },
+        {
+            "id": 4,
+            "nome": "nam",
+            "categoria": "nesciunt",
+            "quantidade_inicial": 80,
+            "preco_unitario": 43.16
+        },
+        {
+            "id": 5,
+            "nome": "enim",
+            "categoria": "inventore",
+            "quantidade_inicial": 51,
+            "preco_unitario": 27.25
+        },
+        {
+            "id": 6,
+            "nome": "quae",
+            "categoria": "placeat",
+            "quantidade_inicial": 26,
+            "preco_unitario": 11.57
+        },
+        {
+            "id": 7,
+            "nome": "rem",
+            "categoria": "consectetur",
+            "quantidade_inicial": 59,
+            "preco_unitario": 31.86
+        },
+        {
+            "id": 8,
+            "nome": "magni",
+            "categoria": "numquam",
+            "quantidade_inicial": 2,
+            "preco_unitario": 88.63
+        },
+        {
+            "id": 9,
+            "nome": "tempore",
+            "categoria": "inventore",
+            "quantidade_inicial": 19,
+            "preco_unitario": 43.12
+        },
+        {
+            "id": 10,
+            "nome": "illo",
+            "categoria": "suscipit",
+            "quantidade_inicial": 93,
+            "preco_unitario": 2.8
+        },
+        {
+            "id": 11,
+            "nome": "similique",
+            "categoria": "quasi",
+            "quantidade_inicial": 5,
+            "preco_unitario": 23.63
+        },
+        {
+            "id": 12,
+            "nome": "provident",
+            "categoria": "quidem",
+            "quantidade_inicial": 0,
+            "preco_unitario": 45.54
+        },
+        {
+            "id": 13,
+            "nome": "in",
+            "categoria": "adipisci",
+            "quantidade_inicial": 32,
+            "preco_unitario": 73.74
+        },
+        {
+            "id": 14,
+            "nome": "asperiores",
+            "categoria": "perferendis",
+            "quantidade_inicial": 51,
+            "preco_unitario": 4.13
+        },
+        {
+            "id": 15,
+            "nome": "labore",
+            "categoria": "enim",
+            "quantidade_inicial": 57,
+            "preco_unitario": 29.68
+        },
+        {
+            "id": 16,
+            "nome": "officia",
+            "categoria": "est",
+            "quantidade_inicial": 58,
+            "preco_unitario": 34.78
+        },
+        {
+            "id": 17,
+            "nome": "corporis",
+            "categoria": "cum",
+            "quantidade_inicial": 39,
+            "preco_unitario": 94.98
+        },
+        {
+            "id": 18,
+            "nome": "perferendis",
+            "categoria": "consectetur",
+            "quantidade_inicial": 86,
+            "preco_unitario": 21.4
+        },
+        {
+            "id": 19,
+            "nome": "qui",
+            "categoria": "placeat",
+            "quantidade_inicial": 91,
+            "preco_unitario": 78.13
+        },
+        {
+            "id": 20,
+            "nome": "soluta",
+            "categoria": "ratione",
+            "quantidade_inicial": 85,
+            "preco_unitario": 0.79
+        },
+        {
+            "id": 21,
+            "nome": "incidunt",
+            "categoria": "doloribus",
+            "quantidade_inicial": 90,
+            "preco_unitario": 51.41
+        },
+        {
+            "id": 22,
+            "nome": "adipisci",
+            "categoria": "modi",
+            "quantidade_inicial": 13,
+            "preco_unitario": 93.2
+        },
+        {
+            "id": 23,
+            "nome": "adipisci",
+            "categoria": "voluptas",
+            "quantidade_inicial": 5,
+            "preco_unitario": 6.32
+        },
+        {
+            "id": 24,
+            "nome": "quisquam",
+            "categoria": "veritatis",
+            "quantidade_inicial": 0,
+            "preco_unitario": 52.2
+        },
+        {
+            "id": 25,
+            "nome": "blanditiis",
+            "categoria": "repellat",
+            "quantidade_inicial": 68,
+            "preco_unitario": 27.63
+        },
+        {
+            "id": 26,
+            "nome": "eius",
+            "categoria": "amet",
+            "quantidade_inicial": 64,
+            "preco_unitario": 3.85
+        },
+        {
+            "id": 27,
+            "nome": "placeat",
+            "categoria": "facilis",
+            "quantidade_inicial": 23,
+            "preco_unitario": 78.53
+        },
+        {
+            "id": 28,
+            "nome": "tempora",
+            "categoria": "sed",
+            "quantidade_inicial": 72,
+            "preco_unitario": 51.37
+        },
+        {
+            "id": 29,
+            "nome": "asperiores",
+            "categoria": "totam",
+            "quantidade_inicial": 1,
+            "preco_unitario": 58.07
+        },
+        {
+            "id": 30,
+            "nome": "repudiandae",
+            "categoria": "corrupti",
+            "quantidade_inicial": 1,
+            "preco_unitario": 32.06
+        },
+        {
+            "id": 31,
+            "nome": "ipsa",
+            "categoria": "hic",
+            "quantidade_inicial": 16,
+            "preco_unitario": 35.51
+        },
+        {
+            "id": 32,
+            "nome": "adipisci",
+            "categoria": "doloribus",
+            "quantidade_inicial": 89,
+            "preco_unitario": 46.93
+        },
+        {
+            "id": 33,
+            "nome": "id",
+            "categoria": "sunt",
+            "quantidade_inicial": 35,
+            "preco_unitario": 54.15
+        },
+        {
+            "id": 34,
+            "nome": "blanditiis",
+            "categoria": "debitis",
+            "quantidade_inicial": 1,
+            "preco_unitario": 52.48
+        },
+        {
+            "id": 35,
+            "nome": "ipsam",
+            "categoria": "recusandae",
+            "quantidade_inicial": 5,
+            "preco_unitario": 74.22
+        },
+        {
+            "id": 36,
+            "nome": "officia",
+            "categoria": "ut",
+            "quantidade_inicial": 0,
+            "preco_unitario": 89.81
+        },
+        {
+            "id": 37,
+            "nome": "reprehenderit",
+            "categoria": "rem",
+            "quantidade_inicial": 12,
+            "preco_unitario": 45.39
+        },
+        {
+            "id": 38,
+            "nome": "neque",
+            "categoria": "recusandae",
+            "quantidade_inicial": 17,
+            "preco_unitario": 11.02
+        },
+        {
+            "id": 39,
+            "nome": "itaque",
+            "categoria": "eius",
+            "quantidade_inicial": 77,
+            "preco_unitario": 61.4
+        },
+        {
+            "id": 40,
+            "nome": "voluptas",
+            "categoria": "aut",
+            "quantidade_inicial": 62,
+            "preco_unitario": 36.03
+        },
+        {
+            "id": 41,
+            "nome": "in",
+            "categoria": "doloremque",
+            "quantidade_inicial": 11,
+            "preco_unitario": 30.26
+        },
+        {
+            "id": 42,
+            "nome": "ipsam",
+            "categoria": "nostrum",
+            "quantidade_inicial": 3,
+            "preco_unitario": 84.0
+        },
+        {
+            "id": 43,
+            "nome": "quod",
+            "categoria": "illum",
+            "quantidade_inicial": 16,
+            "preco_unitario": 46.41
+        },
+        {
+            "id": 44,
+            "nome": "architecto",
+            "categoria": "quaerat",
+            "quantidade_inicial": 9,
+            "preco_unitario": 35.38
+        },
+        {
+            "id": 45,
+            "nome": "maiores",
+            "categoria": "est",
+            "quantidade_inicial": 87,
+            "preco_unitario": 30.99
+        },
+        {
+            "id": 46,
+            "nome": "unde",
+            "categoria": "porro",
+            "quantidade_inicial": 5,
+            "preco_unitario": 23.05
+        },
+        {
+            "id": 47,
+            "nome": "minus",
+            "categoria": "vel",
+            "quantidade_inicial": 0,
+            "preco_unitario": 44.31
+        },
+        {
+            "id": 48,
+            "nome": "maxime",
+            "categoria": "assumenda",
+            "quantidade_inicial": 56,
+            "preco_unitario": 47.31
+        },
+        {
+            "id": 49,
+            "nome": "ratione",
+            "categoria": "ducimus",
+            "quantidade_inicial": 86,
+            "preco_unitario": 63.03
+        },
+        {
+            "id": 50,
+            "nome": "eaque",
+            "categoria": "porro",
+            "quantidade_inicial": 76,
+            "preco_unitario": 26.43
+        },
+        {
+            "id": 51,
+            "nome": "incidunt",
+            "categoria": "voluptate",
+            "quantidade_inicial": 23,
+            "preco_unitario": 85.94
+        },
+        {
+            "id": 52,
+            "nome": "impedit",
+            "categoria": "dignissimos",
+            "quantidade_inicial": 26,
+            "preco_unitario": 45.26
+        },
+        {
+            "id": 53,
+            "nome": "itaque",
+            "categoria": "maxime",
+            "quantidade_inicial": 28,
+            "preco_unitario": 2.15
+        },
+        {
+            "id": 54,
+            "nome": "dicta",
+            "categoria": "possimus",
+            "quantidade_inicial": 42,
+            "preco_unitario": 78.35
+        },
+        {
+            "id": 55,
+            "nome": "ducimus",
+            "categoria": "sed",
+            "quantidade_inicial": 49,
+            "preco_unitario": 77.58
+        },
+        {
+            "id": 56,
+            "nome": "hic",
+            "categoria": "molestias",
+            "quantidade_inicial": 75,
+            "preco_unitario": 67.2
+        },
+        {
+            "id": 57,
+            "nome": "ab",
+            "categoria": "mollitia",
+            "quantidade_inicial": 5,
+            "preco_unitario": 24.88
+        },
+        {
+            "id": 58,
+            "nome": "porro",
+            "categoria": "omnis",
+            "quantidade_inicial": 0,
+            "preco_unitario": 50.6
+        }
+    ]
+}
