@@ -9,6 +9,17 @@ class TestEstoque(unittest.TestCase):
         self.client = app.test_client()
         self.headers = {"Content-Type": "application/json"}
         self.fake = Faker("pt_BR")
+        self.token = self.obter_token_autorizacao()
+        self.headers["Authorization"] = self.token
+
+    def obter_token_autorizacao(self):
+        credenciais = {"usuario": "admin", "senha": "senha123"}
+        response = self.client.post(
+            "/login", data=json.dumps(credenciais), headers=self.headers
+        )
+        self.assertEqual(response.status_code, 200)
+        data = json.loads(response.data)
+        return data["token"]
 
     def gerar_produto_ficticio(self):
         return {
@@ -29,7 +40,7 @@ class TestEstoque(unittest.TestCase):
         self.assertEqual(data["nome"], produto["nome"])
 
     def test_CT002_listar_produtos(self):
-        response = self.client.get("/produtos")
+        response = self.client.get("/produtos", headers=self.headers)
         self.assertEqual(response.status_code, 200)
 
     def test_CT003_buscar_produto(self):

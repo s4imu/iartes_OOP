@@ -1,5 +1,29 @@
+from itsdangerous import URLSafeTimedSerializer as Serializer
+
+usuarios = {"admin": "senha123"}
+SECRET_KEY = "sua_chave_secreta"
 produtos = []
 next_id = 1
+
+
+def gerar_token(usuario):
+    s = Serializer(SECRET_KEY)
+    return s.dumps({"usuario": usuario})
+
+
+def validar_token(token):
+    s = Serializer(SECRET_KEY)
+    try:
+        dados = s.loads(token, max_age=3600)  # Define o tempo de expiração aqui
+        return dados["usuario"]
+    except Exception:
+        return None
+
+
+def autenticar_usuario(usuario, senha):
+    if usuario in usuarios and usuarios[usuario] == senha:
+        return gerar_token(usuario)
+    return None
 
 
 def listar_produtos(filtros=None):

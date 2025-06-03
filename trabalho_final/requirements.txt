@@ -1,3 +1,4 @@
 Flask==2.2.5
 Werkzeug==2.2.3
 faker==37.3.0
+itsdangerous==2.1.2
