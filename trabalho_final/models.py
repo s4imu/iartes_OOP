@@ -3,16 +3,21 @@ next_id = 1
 
 
 def listar_produtos(filtros=None):
-    if filtros:
-        nome = filtros.get("nome")
-        categoria = filtros.get("categoria")
-        return [
-            produto
-            for produto in produtos
-            if (not nome or nome.lower() in produto["nome"].lower())
-            and (not categoria or categoria.lower() == produto["categoria"].lower())
-        ]
-    return produtos
+    if not filtros:
+        return produtos
+    filtros_validos = {"nome", "categoria"}
+    chaves_invalidas = set(filtros.keys()) - filtros_validos
+    if chaves_invalidas:
+        raise ValueError("Parâmetros de filtro inválidos.")
+    nome = filtros.get("nome")
+    categoria = filtros.get("categoria")
+    produtos_filtrados = [
+        produto
+        for produto in produtos
+        if (not nome or nome.lower() in produto["nome"].lower())
+        and (not categoria or categoria.lower() in produto["categoria"].lower())
+    ]
+    return produtos_filtrados
 
 
 def criar_produto(dados):
@@ -33,6 +38,10 @@ def atualizar_produto(id, dados):
     produto = obter_produto_por_id(id)
     if not produto:
         return None
+    if "nome" in dados and not dados["nome"]:
+        raise ValueError("Nome do produto não pode ser vazio.")
+    if "preco_unitario" in dados and dados["preco_unitario"] <= 0:
+        raise ValueError("Preço unitário deve ser maior que zero.")
     produto.update(dados)
     return produto
 
