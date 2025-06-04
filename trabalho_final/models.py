@@ -1,4 +1,5 @@
 import json
+import csv
 from itsdangerous import URLSafeTimedSerializer as Serializer
 
 ARQUIVO_DADOS = "dados.json"
@@ -124,3 +125,39 @@ def remover_produto(id):
     dados["produtos"] = [p for p in produtos if p["id"] != id]
     salvar_dados(dados)
     return produto
+
+
+def gerar_relatorio_testes_csv(nome_arquivo="relatorio_testes.csv", resultados=[]):
+    with open(nome_arquivo, mode="w", newline="") as arquivo_csv:
+        escritor = csv.writer(arquivo_csv)
+        escritor.writerow(["Teste", "Resultado", "Mensagem"])
+        for resultado in resultados:
+            escritor.writerow(
+                [resultado["teste"], resultado["resultado"], resultado["mensagem"]]
+            )
+    print(f"Relatório de testes gerado: {nome_arquivo}")
+
+
+def gerar_relatorio_produtos_csv(nome_arquivo="relatorio_produtos.csv"):
+    dados = carregar_dados()
+    produtos = dados["produtos"]
+    categorias = {produto["categoria"] for produto in produtos}
+
+    with open(nome_arquivo, mode="w", newline="") as arquivo_csv:
+        escritor = csv.writer(arquivo_csv)
+        escritor.writerow(["ID", "Nome", "Categoria", "Quantidade", "Preço Unitário"])
+        for produto in produtos:
+            escritor.writerow(
+                [
+                    produto["id"],
+                    produto["nome"],
+                    produto["categoria"],
+                    produto["quantidade_inicial"],
+                    produto["preco_unitario"],
+                ]
+            )
+        escritor.writerow([])  # Linha em branco
+        escritor.writerow(["Categorias Disponíveis"])
+        for categoria in categorias:
+            escritor.writerow([categoria])
+    print(f"Relatório de produtos gerado: {nome_arquivo}")

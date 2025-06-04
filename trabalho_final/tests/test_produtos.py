@@ -2,15 +2,33 @@ from faker import Faker
 import unittest
 import json
 from app import app
+from models import gerar_relatorio_testes_csv, gerar_relatorio_produtos_csv
 
 
 class TestEstoque(unittest.TestCase):
+    resultados_testes = []
+
     def setUp(self):
         self.client = app.test_client()
         self.headers = {"Content-Type": "application/json"}
         self.fake = Faker("pt_BR")
         self.token = self.obter_token_autorizacao()
         self.headers["Authorization"] = self.token
+
+    def tearDown(self):
+        resultado = {
+            "teste": self._testMethodName,
+            "resultado": "sucesso" if self._outcome.success else "falha",
+            "mensagem": (
+                str(self._outcome.errors[-1][1]) if self._outcome.errors else ""
+            ),
+        }
+        self.resultados_testes.append(resultado)
+
+    @classmethod
+    def tearDownClass(cls):
+        gerar_relatorio_testes_csv(resultados=cls.resultados_testes)
+        gerar_relatorio_produtos_csv(nome_arquivo="relatorio_produtos.csv")
 
     def obter_token_autorizacao(self):
         credenciais = {"usuario": "admin", "senha": "senha123"}
