@@ -176,9 +176,13 @@ class TestEstoque(unittest.TestCase):
 
     def test_CT011_entrada_estoque_invalida(self):
         produto = self.gerar_produto_ficticio()
-        self.client.post("/produtos", data=json.dumps(produto), headers=self.headers)
+        response_criacao = self.client.post(
+            "/produtos", data=json.dumps(produto), headers=self.headers
+        )
+        data = json.loads(response_criacao.data)
+        produto_id = data["id"]
         response = self.client.post(
-            "/produtos/1/entrada",
+            f"/produtos/{produto_id}/entrada",
             data=json.dumps({"quantidade": -5}),
             headers=self.headers,
         )
@@ -209,7 +213,7 @@ class TestEstoque(unittest.TestCase):
 
     # Cenários de Requisições Inválidas
     def test_CT014_buscar_produto_inexistente(self):
-        response = self.client.get("/produtos/999", headers=self.headers)
+        response = self.client.get("/produtos/9999999999", headers=self.headers)
         self.assertEqual(response.status_code, 404)
 
     def test_CT015_buscar_produtos_com_parametros_invalidos(self):
@@ -224,21 +228,25 @@ class TestEstoque(unittest.TestCase):
             "preco_unitario": self.fake.random_int(min=1, max=10000) / 100,
         }
         response = self.client.put(
-            "/produtos/999", data=json.dumps(atualizacao), headers=self.headers
+            "/produtos/9999999999", data=json.dumps(atualizacao), headers=self.headers
         )
         self.assertEqual(response.status_code, 404)
 
     def test_CT017_remover_produto_inexistente(self):
-        response = self.client.delete("/produtos/999", headers=self.headers)
+        response = self.client.delete("/produtos/99999999999999", headers=self.headers)
         self.assertEqual(response.status_code, 404)
 
     # Cenários de Operações com Estoque Zerado ou Negativo
     def test_CT018_saida_estoque_insuficiente(self):
         produto = self.gerar_produto_ficticio()
         produto["quantidade_inicial"] = 5
-        self.client.post("/produtos", data=json.dumps(produto), headers=self.headers)
+        response_criacao = self.client.post(
+            "/produtos", data=json.dumps(produto), headers=self.headers
+        )
+        data = json.loads(response_criacao.data)
+        produto_id = data["id"]
         response = self.client.post(
-            "/produtos/1/saida",
+            f"/produtos/{produto_id}/saida",
             data=json.dumps({"quantidade": 10}),
             headers=self.headers,
         )
@@ -249,9 +257,13 @@ class TestEstoque(unittest.TestCase):
     def test_CT019_saida_estoque_zerado(self):
         produto = self.gerar_produto_ficticio()
         produto["quantidade_inicial"] = 0
-        self.client.post("/produtos", data=json.dumps(produto), headers=self.headers)
+        response_criacao = self.client.post(
+            "/produtos", data=json.dumps(produto), headers=self.headers
+        )
+        data = json.loads(response_criacao.data)
+        produto_id = data["id"]
         response = self.client.post(
-            "/produtos/1/saida",
+            f"/produtos/{produto_id}/saida",
             data=json.dumps({"quantidade": 5}),
             headers=self.headers,
         )
