@@ -1,8 +1,59 @@
-# Testes Automatizados - Sistema de Gerenciamento de Inventário
+# Trabalho Final - Programação Orientada a Objetos (IARTES)
 
-Este documento descreve os cenários de teste implementados no arquivo `test_produtos.py`. Cada cenário possui um código único, nome, descrição, entrada de teste e resultado esperado.
+## 📘 Descrição do Projeto
 
-## Cenários de Teste
+Este projeto consiste no desenvolvimento de uma aplicação backend utilizando **Python** e o framework **Flask**, com foco em **Test-Driven Development (TDD)**. A aplicação tem como objetivo gerenciar o inventário de produtos de um pequeno comércio, permitindo o cadastro, consulta, atualização e controle de estoque.
+
+---
+
+## 🎯 Objetivo Geral
+
+Implementar um sistema de gerenciamento de inventário que permita:
+
+- Cadastrar e atualizar produtos.
+- Consultar e listar o estoque.
+- Registrar entradas e saídas de mercadorias.
+- Acompanhar o nível de estoque de cada item.
+
+---
+
+## 📦 Bibliotecas Utilizadas
+
+- **Flask**: Framework web leve e flexível para Python, utilizado para criar APIs REST e aplicações web. Ele facilita o desenvolvimento rápido e organizado de sistemas backend.
+- **Werkzeug**: Biblioteca que fornece ferramentas para manipulação de requisições e respostas HTTP, além de funcionalidades como roteamento e depuração. É um dos componentes principais do Flask.
+- **Faker**: Biblioteca para geração de dados fictícios, como nomes, endereços e números. É útil para criar dados de teste em aplicações e cenários de desenvolvimento.
+- **itsdangerous**: Biblioteca para manipulação segura de dados, como geração e validação de tokens. É usada para implementar autenticação e proteger informações sensíveis.
+
+---
+
+## 📋 Funcionalidades Implementadas
+
+1. **Cadastro de Produto**:
+   - Permite cadastrar produtos com os campos: `nome`, `categoria`, `quantidade_inicial` e `preco_unitario`.
+   - Restrições: `quantidade_inicial` ≥ 0 e `preco_unitario` > 0.
+
+2. **Listagem de Produtos**:
+   - Exibe todos os produtos cadastrados.
+   - Suporte a filtros por `nome` ou `categoria` via query string.
+
+3. **Consulta de Produto por ID**:
+   - Retorna os dados completos de um produto específico.
+
+4. **Atualização de Produto**:
+   - Permite atualizar os campos `nome`, `categoria` ou `preco_unitario`.
+
+5. **Operações de Estoque**:
+   - Entrada: aumenta a quantidade disponível de um produto.
+   - Saída: reduz a quantidade disponível, sem permitir estoque negativo.
+
+6. **Remoção de Produto**:
+   - Permite excluir um produto do inventário.
+
+---
+
+## 🧪 Testes Automatizados
+
+Os testes foram implementados seguindo a metodologia **TDD** e cobrem os seguintes cenários:
 
 | Código  | Nome                          | Descrição                                                                 | Entrada de Teste                                                                 | Resultado Esperado                                                                 |
 |---------|-------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -25,3 +76,16 @@ Este documento descreve os cenários de teste implementados no arquivo `test_pro
 | CT017   | Remover Produto Inexistente   | Testa a remoção de um produto inexistente.                                | ID do produto: 999                                                              | Produto não encontrado, status 404.                                               |
 | CT018   | Saída de Estoque Insuficiente | Testa a saída de estoque com quantidade maior que o disponível.           | ID do produto: 1, `{"quantidade": 10}`                                          | Erro de estoque insuficiente, status 400.                                         |
 | CT019   | Saída de Estoque Zerado       | Testa a saída de estoque para um produto com quantidade inicial igual a 0.| ID do produto: 1, `{"quantidade": 5}`                                           | Erro de estoque insuficiente, status 400.                                         |
+
+
+---
+
+## 🛠️ Instruções de Execução
+
+Para executar o projeto, siga os passos abaixo:
+
+1. Certifique-se de ter o **Python 3.8+** instalado.
+2. Execute o script `script.sh` no terminal para configurar o ambiente, iniciar a API, executar os testes automatizados e exibir os relatórios CSV no terminal.:
+
+```bash
+./script.sh

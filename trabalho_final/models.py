@@ -130,6 +130,7 @@ def remover_produto(id):
 def gerar_relatorio_testes_csv(nome_arquivo="relatorio_testes.csv", resultados=[]):
     with open(nome_arquivo, mode="w", newline="") as arquivo_csv:
         escritor = csv.writer(arquivo_csv)
+        escritor.writerow(["Relatório de Testes"])
         escritor.writerow(["Teste", "Resultado", "Mensagem"])
         for resultado in resultados:
             escritor.writerow(
@@ -145,6 +146,7 @@ def gerar_relatorio_produtos_csv(nome_arquivo="relatorio_produtos.csv"):
 
     with open(nome_arquivo, mode="w", newline="") as arquivo_csv:
         escritor = csv.writer(arquivo_csv)
+        escritor.writerow(["Relatório de Produtos"])
         escritor.writerow(["ID", "Nome", "Categoria", "Quantidade", "Preço Unitário"])
         for produto in produtos:
             escritor.writerow(
